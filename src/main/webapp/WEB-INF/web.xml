@@ -10,7 +10,7 @@
         This is a simple web application with a source code organization
         based on the recommendations of the Application Developer's Guide.
     </description>
-
+<!--
     <servlet>
         <servlet-name>MainServlet</servlet-name>
         <servlet-class>Main</servlet-class>
@@ -20,7 +20,8 @@
         <servlet-name>MainServlet</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
-    
+-->
+
     <welcome-file-list>   
         <welcome-file>index.jsp</welcome-file>   
         <welcome-file>index.html</welcome-file>   
