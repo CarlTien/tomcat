@@ -32,7 +32,7 @@ public class LeakServlet extends HttpServlet {
 					.userAgent("Mozilla").get();
 		} catch (IOException e1) {
 			ServletOutputStream out = resp.getOutputStream();
-	        out.write((new Gson()).toJson(picList).getBytes());
+	        out.write((new Gson()).toJson(picList));
 	        out.flush();
 	        out.close();
 		}
@@ -53,7 +53,7 @@ public class LeakServlet extends HttpServlet {
 			}
 		}
         ServletOutputStream out = resp.getOutputStream();
-        out.write((new Gson()).toJson(picList).getBytes());
+        out.write((new Gson()).toJson(picList));
         out.flush();
         out.close();
     }
