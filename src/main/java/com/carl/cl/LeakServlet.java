@@ -18,7 +18,7 @@ import org.jsoup.select.Elements;
 import com.google.gson.Gson;
 
 @WebServlet(
-        name = "CaoServlet", 
+        name = "CLServlet", 
         urlPatterns = {"/cao.html"}
     )
 public class LeakServlet extends HttpServlet {
