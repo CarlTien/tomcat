@@ -16,6 +16,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 @WebServlet("/cao.html")
 public class LeakServlet extends HttpServlet {
@@ -32,7 +33,7 @@ public class LeakServlet extends HttpServlet {
 					.userAgent("Mozilla").get();
 		} catch (IOException e1) {
 			ServletOutputStream out = resp.getOutputStream();
-	        out.write((new Gson()).toJson(picList));
+	        out.write((new GsonBuilder().disableHtmlEscaping().create()).toJson(picList));
 	        out.flush();
 	        out.close();
 		}
@@ -53,7 +54,7 @@ public class LeakServlet extends HttpServlet {
 			}
 		}
         ServletOutputStream out = resp.getOutputStream();
-        out.write((new Gson()).toJson(picList));
+        out.write((new GsonBuilder().disableHtmlEscaping().create()).toJson(picList));
         out.flush();
         out.close();
     }
