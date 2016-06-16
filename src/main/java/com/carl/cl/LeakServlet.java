@@ -17,16 +17,13 @@ import org.jsoup.select.Elements;
 
 import com.google.gson.Gson;
 
-@WebServlet(
-        name = "CLServlet", 
-        urlPatterns = {"/cao.html"}
-    )
+@WebServlet("/cao.html")
 public class LeakServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String pageNum = req.getAttribute("page");
+        String pageNum = req.getParameter("page");
         List<String> picList = new ArrayList<String>();
 	String baseurl = "http://cc.8sss.me/";
 	Document doc = Jsoup.connect(baseurl + "thread0806.php").data("fid", "16").data("page", pageNum)
