@@ -25,7 +25,7 @@ public class LeakServlet extends HttpServlet {
             throws ServletException, IOException {
         String pageNum = req.getParameter("page");
        List<String> picList = new ArrayList<String>();
-		String baseurl = "http://cc.8sss.me/";
+		String baseurl = "http://t66y.com/";
 		Document doc=null;
 		try {
 			doc = Jsoup.connect(baseurl + "thread0806.php").data("fid", "16").data("page", pageNum)
