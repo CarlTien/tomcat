@@ -20,11 +20,9 @@ xmlhttp.onreadystatechange=function()
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
     document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-    }else{
-      document.getElementById("myDiv").innerHTML=xmlhttp.status;
     }
   }
-xmlhttp.open("GET","http://pv.sohu.com/cityjson?ie=utf-8",false);
+xmlhttp.open("GET","/cao.html?page=1",true);
 xmlhttp.send();
 }
 </script>
