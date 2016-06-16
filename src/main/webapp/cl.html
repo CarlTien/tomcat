@@ -19,7 +19,10 @@ xmlhttp.onreadystatechange=function()
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+        var obj = JSON.parse(xmlhttp.responseText);
+  	for (i=0;i<obj.length;i++){
+    	document.write("<img src=" + obj[i] + " />");
+  }
     }
   }
 xmlhttp.open("GET","/cao.html?page=1",true);
@@ -28,9 +31,6 @@ xmlhttp.send();
 </script>
 </head>
 <body>
-	<body>
-
-<div id="myDiv"><h2>使用 AJAX 修改该文本内容</h2></div>
 <button type="button" onclick="loadXMLDoc()">修改内容</button>
 </body>
 </html>
