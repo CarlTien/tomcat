@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(
         name = "CaoServlet", 
-        urlPatterns = {"/cao"}
+        urlPatterns = {"/cao.html"}
     )
 public class LeakServlet extends HttpServlet {
 
