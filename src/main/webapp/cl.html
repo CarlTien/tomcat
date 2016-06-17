@@ -2,36 +2,39 @@
 <html lang="zh">
 <head>
 	<meta charset="UTF-8">
-<meta name=”viewport” content=”width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;” />
-	<title>node.js</title>
-  <script>
-function loadXMLDoc()
-{
-var xmlhttp;
-if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-  xmlhttp=new XMLHttpRequest();
-  }
-else
-  {// code for IE6, IE5
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange=function()
-  {
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-    {
-        var obj = JSON.parse(xmlhttp.responseText);
-  	for (i=0;i<obj.length;i++){
-    	document.write("<img src=" + obj[i] + " />");
-  }
-    }
-  }
-xmlhttp.open("GET","/cao.html?page=2",true);
-xmlhttp.send();
-}
-</script>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0;minimum-scale=1.0; maximum-scale=1.0; user-scalable=no;"/>
+	<title>1024</title>
+	<script>
+		function loadXMLDoc()
+		{
+		var xmlhttp;
+		if (window.XMLHttpRequest)
+		  {// code for IE7+, Firefox, Chrome, Opera, Safari
+		  xmlhttp=new XMLHttpRequest();
+		  }
+		else
+		  {// code for IE6, IE5
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		xmlhttp.onreadystatechange=function()
+		  {
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		    {
+		        var obj = JSON.parse(xmlhttp.responseText);
+		  	for (i=0;i<obj.length;i++){
+		    	document.write("<img src=" + obj[i] + " />");
+		  }
+		    }
+		  }
+		xmlhttp.open("GET","/cao.html?page="+document.getElementById("pageid").value,true);
+		xmlhttp.send();
+		}
+	</script>
 </head>
 <body>
-<button type="button" onclick="loadXMLDoc()">修改内容</button>
+	<center>
+		<input type="text" id="pageid"><br>
+		<button type="button" onclick="loadXMLDoc()">修改内容</button>
+	</center>
 </body>
 </html>
