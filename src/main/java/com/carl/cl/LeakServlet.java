@@ -42,7 +42,7 @@ public class LeakServlet extends HttpServlet {
 		for (Element b : d) {
 			Document detailPage = null;
 			try {
-				detailPage = Jsoup.connect(b.attr("abs:href")).userAgent("Mozilla").get();
+				detailPage = Jsoup.connect(baseurl+b.attr("href")).userAgent("Mozilla").get();
 			} catch (IOException e) {
 				continue;
 			}
